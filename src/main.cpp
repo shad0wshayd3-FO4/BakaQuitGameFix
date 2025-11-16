@@ -9,7 +9,7 @@ namespace Hook
 			REX::W32::TerminateProcess(REX::W32::GetCurrentProcess(), EXIT_SUCCESS);
 		}
 
-		inline static REL::Hook Hook{ REL::Offset(0x0C2A410), 0x20, Shutdown };
+		inline static REL::Hook Hook{ REL::ID(4812562), 0x20, Shutdown };
 	};
 }
 
