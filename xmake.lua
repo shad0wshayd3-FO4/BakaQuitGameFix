@@ -1,31 +1,19 @@
--- set minimum xmake version
-set_xmakever("2.8.2")
-
--- includes
+-- include subprojects
 includes("lib/commonlibf4")
 
--- set project
+-- set project constants
 set_project("BakaQuitGameFix")
 set_version("2.0.0")
 set_license("GPL-3.0")
-
--- set defaults
 set_languages("c++23")
 set_warnings("allextra")
 
--- set policies
-set_policy("package.requires_lock", true)
-
--- add rules
+-- add common rules
 add_rules("mode.debug", "mode.releasedbg")
 add_rules("plugin.vsxmake.autoupdate")
 
--- targets
+-- define targets
 target("BakaQuitGameFix")
-    -- add dependencies to target
-    add_deps("commonlibf4")
-
-    -- add commonlibsse plugin
     add_rules("commonlibf4.plugin", {
         name = "BakaQuitGameFix",
         author = "shad0wshayd3"
